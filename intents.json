@@ -1,0 +1,469 @@
+{"intents": [
+        {"tag": "greeting",
+         "patterns": ["Hi there", "How are you", "Is anyone there?","Hey","Hola", "Hello", "Good day"],
+         "responses": ["Hello, thanks for asking", "Good to see you again", "Hi there, how can I help?"],
+         "context": [""]
+        },
+        {"tag": "goodbye",
+         "patterns": ["Bye", "See you later", "Goodbye", "Nice chatting to you, bye", "Till next time"],
+         "responses": ["See you!", "Have a nice day", "Bye! Come back again soon."],
+         "context": [""]
+        },
+        {"tag": "thanks",
+         "patterns": ["Thanks", "Thank you", "That's helpful", "Awesome, thanks", "Thanks for helping me"],
+         "responses": ["Happy to help!", "Any time!", "My pleasure"],
+         "context": [""]
+        },
+        {"tag": "noanswer",
+         "patterns": [],
+         "responses": ["Sorry, can't understand you", "Please give me more info", "Not sure I understand"],
+         "context": [""]
+        },
+        {"tag": "options",
+         "patterns": ["How you could help me?", "What you can do?", "What help you provide?", "How you can be helpful?", "What support is offered"],
+         "responses": ["I can guide you through Adverse drug reaction list, Blood pressure tracking, Hospitals and Pharmacies", "Offering support for Adverse drug reaction, Blood pressure, Hospitals and Pharmacies"],
+         "context": [""]
+        },
+        {"tag": "adverse_drug",
+         "patterns": ["How to check Adverse drug reaction?", "Open adverse drugs module", "Give me a list of drugs causing adverse behavior", "List all drugs suitable for patient with adverse reaction", "Which drugs dont have adverse reaction?" ],
+         "responses": ["Navigating to Adverse drug reaction module"],
+         "context": [""]
+        },
+        {"tag": "blood_pressure",
+         "patterns": ["Open blood pressure module", "Task related to blood pressure", "Blood pressure data entry", "I want to log blood pressure results", "Blood pressure data management" ],
+         "responses": ["Navigating to Blood Pressure module"],
+         "context": [""]
+        },
+        {"tag": "blood_pressure_search",
+         "patterns": ["I want to search for blood pressure result history", "Blood pressure for patient", "Load patient blood pressure result", "Show blood pressure results for patient", "Find blood pressure results by ID" ],
+         "responses": ["Please provide Patient ID", "Patient ID?"],
+         "context": ["search_blood_pressure_by_patient_id"]
+        },
+        {"tag": "search_blood_pressure_by_patient_id",
+         "patterns": [],
+         "responses": ["Loading Blood pressure result for Patient"],
+         "context": [""]
+        },
+        {"tag": "pharmacy_search",
+         "patterns": ["Find me a pharmacy", "Find pharmacy", "List of pharmacies nearby", "Locate pharmacy", "Search pharmacy" ],
+         "responses": ["Please provide pharmacy name"],
+         "context": ["search_pharmacy_by_name"]
+        },
+        {"tag": "search_pharmacy_by_name",
+         "patterns": [],
+         "responses": ["Loading pharmacy details"],
+         "context": [""]
+        },
+        {"tag": "hospital_search",
+         "patterns": ["Lookup for hospital", "Searching for hospital to transfer patient", "I want to search hospital data", "Hospital lookup for patient", "Looking up hospital details" ],
+         "responses": ["Please provide hospital name or location"],
+         "context": ["search_hospital_by_params"]
+        },
+        {"tag": "search_hospital_by_params",
+         "patterns": [],
+         "responses": ["Please provide hospital type"],
+         "context": ["search_hospital_by_type"]
+        },
+        {"tag": "search_hospital_by_type",
+         "patterns": [],
+         "responses": ["Loading hospital details"],
+         "context": [""]
+        },
+        {
+         "tag":"common cold symptoms",
+         "patterns": ["Runny or stuffy nose",
+         "Sore throat",
+         "Cough",
+         "Congestion",
+         "Slight body aches or a mild headache",
+         "Sneezing",
+         "Low-grade fever",
+         "Generally feeling unwell (malaise)"],
+         "responses":["It seems that you are suffering from common cold"]
+        },
+        {
+         "tag":"fever symptoms",
+         "patterns":["Sweating",
+         "Chills and shivering",
+         "Headache",
+         "Muscle aches",
+         "Loss of appetite",
+         "Irritability",
+         "Dehydration",
+         "General weakness"],
+         "responses":["It seems that you are suffering from fever"]
+        },
+        {
+         "tag":"Diabetes symptoms",
+         "patterns":["increased hunger",
+         "increased thirst",
+         "weight loss",
+         "frequent urination",
+         "blurry vision",
+         "extreme fatigue"],
+         "responses":["It seems that you are suffering from Diabetes"]
+        },
+        {
+         "tag":"Depression symptoms",
+         "patterns":["Hopeless outlook",
+         "Lost interest",
+         "Increased fatigue",
+         "sleep problem",
+         "Anxiety",
+         "change in weight",
+         "Looking at death"],
+         "responses":["It seem that you are suffering from depression"]
+        },
+        {
+         "tag":"Asthma symptoms",
+         "patterns":["coughing",
+         "tightness in the chest",
+         "shortness of breath",
+         "difficulty talking",
+         "panic",
+         "fatigue"],
+         "responses":["It seem that you are suffering from Asthma"]
+        },
+        {
+         "tag":"common cold prevention",
+         "patterns":["What medicines can I buy to help me with my common cold?","tell me some prevention method from common cold","What should I eat or drink if i am suffering from common cold?","How can I keep from getting a cold or the flu?"],
+         "responses":["medicines you can consume : Dextromethorphan,Decongestant,Diphenhydramine,Crocin Cold & Flu Max, preventions that you must follow :Wash your hands,Avoid touching your face,Clean frequently used surfaces,Use hand sanitizers,SUGGESTED FOODS ARE:Garlic,Vitamin C–containing fruits,Leafy greens,Broccoli,Oatmeal,Spices,Chicken Soup"]
+        },
+        {
+         "tag":"fever prevention",
+         "patterns":["What medicines can I buy to help me with my fever?","tell me some prevention method from fever","What should I eat or drink if i am suffering from fever?","How can I keep from getting a fever?"],
+         "responses":["medicines you can consume : acetaminophen ,ibuprofen,aspirin,Crocin Cold & Flu Max, prevention that you must follow :Wash your hands,Cover your mouth when you cough and your nose when you sneeze,Clean frequently used surfaces,Avoid sharing cups, glasses, and eating utensils with other people.,SUGGESTED FOODS ARE:Garlic,Vitamin C–containing fruits,Leafy greens,Broccoli,Oatmeal,Spices,Chicken Soup"]
+        },
+        {
+         "tag":"diabetes prevention",
+         "patterns":["What medicines can I buy to help me with my diabetes?","tell me some prevention method from diabetes","What should I eat or drink if i am suffering from diabetes?","How can I keep from getting diabetes?"],
+         "responses":["medicines you can consume : Insulin ,Amylinomimetic drug,Dipeptidyl peptidase-4 (DPP-4) inhibitor, prevention that you must follow :Cut Sugar and Refined Carbs From Your Diet,Work Out Regularly,Drink Water as Your Primary Beverage,Lose Weight If You’re Overweight or Obese,Quit Smoking, Follow a Very-Low-Carb Diet,Watch Portion Sizes,SUGGESTED FOODS ARE:Leafy greens,Avocados,Eggs"]
+        },
+        {
+         "tag":"depression prevention",
+         "patterns":["What medicines can I buy to help me with my depression?","tell me some prevention method from depression","What should I eat or drink if i am suffering from depression?","How can I keep from getting depression?"],
+         "responses":["medicines you can consume :  brexpiprazole, quetiapine,olanzapine, prevention that you must follow :Exercise regularly,Cut back on social media time,Drink Water as Your Primary Beverage,Build strong relationships,Minimize your daily choices, Follow a Very-Low-Carb Diet,SUGGESTED FOODS ARE:Get Enough Vitamin D,Include Omega-3 Fatty Acids,Beans and legumes"]
+        },
+        {
+         "tag":"asthma prevention",
+         "patterns":["What medicines can I buy to help me with my asthma?","tell me some prevention method from asthma","What should I eat or drink if i am suffering from asthma?","How can I keep from getting asthma?"],
+         "responses":["medicines you can consume : epinephrine,anticholinergic,Proair HFA, prevention that you must follow : Identify Asthma Triggers, Stay Away From Allergens,Avoid Smoke of Any Type,SUGGESTED FOODS ARE:carrots,juice,eggs,broccoli,cantaloupe,milk"]
+        },
+        {
+         "tag":"common cold symptoms",
+         "patterns": ["Runny or stuffy nose",
+         "Sore throat",
+         "Cough",
+         "Congestion",
+         "Slight body aches or a mild headache",
+         "Sneezing",
+         "Low-grade fever",
+         "Generally feeling unwell (malaise)"],
+         "responses":["It seems that you are suffering from common cold"]
+        },
+        {
+         "tag":"fever symptoms",
+         "patterns":["Sweating",
+         "Chills and shivering",
+         "Headache",
+         "Muscle aches",
+         "Loss of appetite",
+         "Irritability",
+         "Dehydration",
+         "General weakness"],
+         "responses":["It seems that you are suffering from fever"]
+        },
+        {
+         "tag":"Diabetes symptoms",
+         "patterns":["increased hunger",
+         "increased thirst",
+         "weight loss",
+         "frequent urination",
+         "blurry vision",
+         "extreme fatigue"],
+         "responses":["It seems that you are suffering from Diabetes"]
+        },
+        {
+         "tag":"Depression symptoms",
+         "patterns":["Hopeless outlook",
+         "Lost interest",
+         "Increased fatigue",
+         "sleep problem",
+         "Anxiety",
+         "change in weight",
+         "Looking at death"],
+         "responses":["It seem that you are suffering from depression"]
+        },
+        {
+         "tag":"Asthma symptoms",
+         "patterns":["coughing",
+         "tightness in the chest",
+         "shortness of breath",
+         "difficulty talking",
+         "panic",
+         "fatigue"],
+         "responses":["It seem that you are suffering from Asthma"]
+        },
+        {
+         "tag":"common cold prevention",
+         "patterns":["What medicines can I buy to help me with my common cold?","tell me some prevention method from common cold","What should I eat or drink if i am suffering from common cold?","How can I keep from getting a cold or the flu?"],
+         "responses":["medicines you can consume : Dextromethorphan,Decongestant,Diphenhydramine,Crocin Cold & Flu Max, preventions that you must follow :Wash your hands,Avoid touching your face,Clean frequently used surfaces,Use hand sanitizers,SUGGESTED FOODS ARE:Garlic,Vitamin C–containing fruits,Leafy greens,Broccoli,Oatmeal,Spices,Chicken Soup"]
+        },
+        {
+         "tag":"fever prevention",
+         "patterns":["What medicines can I buy to help me with my fever?","tell me some prevention method from fever","What should I eat or drink if i am suffering from fever?","How can I keep from getting a fever?"],
+         "responses":["medicines you can consume : acetaminophen ,ibuprofen,aspirin,Crocin Cold & Flu Max, prevention that you must follow :Wash your hands,Cover your mouth when you cough and your nose when you sneeze,Clean frequently used surfaces,Avoid sharing cups, glasses, and eating utensils with other people.,SUGGESTED FOODS ARE:Garlic,Vitamin C–containing fruits,Leafy greens,Broccoli,Oatmeal,Spices,Chicken Soup"]
+        },
+        {
+         "tag":"diabetes prevention",
+         "patterns":["What medicines can I buy to help me with my diabetes?","tell me some prevention method from diabetes","What should I eat or drink if i am suffering from diabetes?","How can I keep from getting diabetes?"],
+         "responses":["medicines you can consume : Insulin ,Amylinomimetic drug,Dipeptidyl peptidase-4 (DPP-4) inhibitor, prevention that you must follow :Cut Sugar and Refined Carbs From Your Diet,Work Out Regularly,Drink Water as Your Primary Beverage,Lose Weight If You’re Overweight or Obese,Quit Smoking, Follow a Very-Low-Carb Diet,Watch Portion Sizes,SUGGESTED FOODS ARE:Leafy greens,Avocados,Eggs"]
+        },
+        {
+         "tag":"depression prevention",
+         "patterns":["What medicines can I buy to help me with my depression?","tell me some prevention method from depression","What should I eat or drink if i am suffering from depression?","How can I keep from getting depression?"],
+         "responses":["medicines you can consume :  brexpiprazole, quetiapine,olanzapine, prevention that you must follow :Exercise regularly,Cut back on social media time,Drink Water as Your Primary Beverage,Build strong relationships,Minimize your daily choices, Follow a Very-Low-Carb Diet,SUGGESTED FOODS ARE:Get Enough Vitamin D,Include Omega-3 Fatty Acids,Beans and legumes"]
+        },
+        {
+         "tag":"asthma prevention",
+         "patterns":["What medicines can I buy to help me with my asthma?","tell me some prevention method from asthma","What should I eat or drink if i am suffering from asthma?","How can I keep from getting asthma?"],
+         "responses":["medicines you can consume : epinephrine,anticholinergic,Proair HFA, prevention that you must follow : Identify Asthma Triggers, Stay Away From Allergens,Avoid Smoke of Any Type,SUGGESTED FOODS ARE:carrots,juice,eggs,broccoli,cantaloupe,milk"]
+        },
+        {
+         "tag":"headache symptoms",
+         "patterns":["Pain or pressure in the forehead, temples, or back of the head",
+         "Dull, aching head pain",
+         "Sensitivity to light or noise",
+         "Nausea",
+         "Fatigue",
+         "Difficulty concentrating",
+         "Muscle aches",
+         "Scalp tenderness"],
+         "responses":["It seems that you are experiencing a headache."]
+        },
+        {
+         "tag":"allergy symptoms",
+         "patterns":["Sneezing",
+         "Itchy, watery eyes",
+         "Runny or stuffy nose",
+         "Itchy throat or ears",
+         "Rashes or hives",
+         "Wheezing or difficulty breathing",
+         "Swelling of the face, lips, or tongue"],
+         "responses":["It seems that you are experiencing allergy symptoms."]
+        },
+        {
+         "tag":"sunburn symptoms",
+         "patterns":["Redness and swelling of the skin",
+         "Pain or tenderness",
+         "Warmth or heat in the affected area",
+         "Blisters or peeling skin",
+         "Headache",
+         "Fever",
+         "Nausea"],
+         "responses":["It seems that you have a sunburn."]
+        },
+        {
+         "tag":"anxiety symptoms",
+         "patterns":["Excessive worrying",
+         "Restlessness or irritability",
+         "Difficulty concentrating",
+         "Rapid heartbeat or palpitations",
+         "Shortness of breath",
+         "Muscle tension",
+         "Insomnia",
+         "Panic attacks"],
+         "responses":["It seems that you are experiencing symptoms of anxiety."]
+        },
+        {
+         "tag":"migraine symptoms",
+         "patterns":["Intense, throbbing head pain",
+         "Nausea or vomiting",
+         "Sensitivity to light, sound, or smells",
+         "Blurred vision",
+         "Lightheadedness or fainting",
+         "Tingling or numbness in the face or extremities",
+         "Fatigue",
+         "Difficulty speaking"],
+         "responses":["It seems that you are experiencing symptoms of a migraine."]
+        },
+        {
+         "tag":"heart disease symptoms",
+         "patterns":["Chest pain or discomfort",
+         "Shortness of breath",
+         "Fatigue",
+         "Dizziness or lightheadedness",
+         "Swelling in the legs, ankles, or feet",
+         "Nausea or indigestion",
+         "Irregular heartbeat"],
+         "responses":["It seems that you may be experiencing symptoms of heart disease."]
+        },
+        {
+         "tag":"insomnia symptoms",
+         "patterns":["Difficulty falling asleep",
+         "Waking up frequently during the night",
+         "Trouble getting back to sleep",
+         "Waking up too early in the morning",
+         "Daytime fatigue or sleepiness",
+         "Irritability, depression, or anxiety",
+         "Difficulty paying attention, focusing on tasks, or remembering"],
+         "responses":["It seems that you are experiencing symptoms of insomnia."]
+        },
+        {
+         "tag":"COVID-19 symptoms",
+         "patterns":["Fever",
+         "Cough",
+         "Shortness of breath or difficulty breathing",
+         "Fatigue",
+         "Muscle or body aches",
+         "Headache",
+         "New loss of taste or smell",
+         "Sore throat",
+         "Congestion or runny nose",
+         "Nausea or vomiting",
+         "Diarrhea"],
+         "responses":["It is possible that you may have COVID-19 symptoms. It is recommended that you get tested and take appropriate precautions to prevent the spread"]
+          },
+          {
+          "tag": "stomach flu symptoms",
+          "patterns": [
+            "Nausea",
+            "Vomiting",
+            "Diarrhea",
+            "Abdominal pain or cramping",
+            "Fever",
+            "Headache",
+            "Muscle aches"
+          ],
+          "responses": ["It seems that you are experiencing symptoms of the stomach flu."]
+        },
+        {
+          "tag": "food poisoning symptoms",
+          "patterns": [
+            "Nausea",
+            "Vomiting",
+            "Diarrhea",
+            "Abdominal pain or cramping",
+            "Fever",
+            "Weakness",
+            "Headache"
+          ],
+          "responses": ["It seems that you are experiencing symptoms of food poisoning."]
+        },
+        {
+        "tag": "back pain symptoms",
+        "patterns": [
+          "Muscle ache",
+          "Shooting or stabbing pain",
+          "Pain that radiates down your leg",
+          "Limited flexibility or range of motion",
+          "Difficulty standing up straight",
+          "Pain that worsens with bending, lifting, standing, or walking"
+        ],
+        "responses": ["It seems that you are experiencing back pain."]
+      },
+      {
+        "tag": "sinus infection symptoms",
+        "patterns": [
+        "Pain or pressure in the face",
+        "Nasal congestion or discharge",
+        "Cough",
+        "Sore throat",
+        "Fever",
+        "Fatigue",
+        "Headache"
+        ],
+        "responses": ["It seems that you are experiencing symptoms of a sinus infection."]
+        },
+        {
+        "tag": "asthma symptoms",
+        "patterns": [
+        "Wheezing",
+        "Shortness of breath",
+        "Chest tightness",
+        "Coughing",
+        "Difficulty breathing",
+        "Fatigue",
+        "Difficulty exercising"
+        ],
+        "responses": ["It seems that you are experiencing symptoms of asthma."]
+        },
+        {
+        "tag": "migraine symptoms",
+        "patterns": [
+        "Pain on one side of the head",
+        "Throbbing or pulsing pain",
+        "Nausea or vomiting",
+        "Sensitivity to light or sound",
+        "Blurred vision",
+        "Lightheadedness or fainting"
+        ],
+        "responses": ["It seems that you are experiencing symptoms of a migraine."]
+        },
+        {
+        "tag": "pneumonia symptoms",
+        "patterns": [
+        "Cough",
+        "Fever",
+        "Chills",
+        "Shortness of breath",
+        "Chest pain",
+        "Fatigue",
+        "Nausea or vomiting"
+        ],
+        "responses": ["It seems that you are experiencing symptoms of pneumonia."]
+        },
+        {
+        "tag": "diabetes symptoms",
+        "patterns": [
+        "Increased thirst",
+        "Frequent urination",
+        "Blurry vision",
+        "Fatigue",
+        "Tingling or numbness in hands or feet",
+        "Slow-healing wounds",
+        "Unexplained weight loss"
+        ],
+        "responses": ["It seems that you are experiencing symptoms of diabetes."]
+        },
+        {
+        "tag": "hypertension symptoms",
+        "patterns": [
+        "Headaches",
+        "Shortness of breath",
+        "Chest pain",
+        "Vision problems",
+        "Fatigue",
+        "Nosebleeds",
+        "Irregular heartbeat"
+        ],
+        "responses": ["It seems that you are experiencing symptoms of hypertension."]
+        },
+        {
+        "tag": "depression symptoms",
+        "patterns": [
+        "Persistent sadness",
+        "Loss of interest or pleasure in activities",
+        "Changes in appetite or weight",
+        "Difficulty sleeping or oversleeping",
+        "Fatigue or lack of energy",
+        "Feelings of worthlessness or guilt",
+        "Difficulty concentrating or making decisions"
+        ],
+        "responses": ["It seems that you are experiencing symptoms of depression."]
+        },
+        {
+        "tag": "hepatitis symptoms",
+        "patterns": [
+        "Abdominal pain or discomfort",
+        "Fever",
+        "Fatigue",
+        "Loss of appetite",
+        "Nausea or vomiting",
+        "Joint pain",
+        "Jaundice"
+        ],
+        "responses": ["It seems that you are experiencing symptoms of hepatitis."]
+        }
+]
+}

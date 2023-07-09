@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Voice Input</title>
+</head>
+<body>
+	<h1>Voice Input Example</h1>
+	<p>Click the button and speak into your microphone:</p>
+	<button onclick="startDictation()">Start</button>
+	<div id="output"></div>
+	<script>
+		function startDictation() {
+			if (window.hasOwnProperty('webkitSpeechRecognition')) {
+				var recognition = new webkitSpeechRecognition();
+				recognition.continuous = false;
+				recognition.interimResults = false;
+				recognition.lang = "en-US";
+				recognition.start();
+				recognition.onresult = function(e) {
+					document.getElementById('output').innerHTML = e.results[0][0].transcript;
+					recognition.stop();
+				};
+				recognition.onerror = function(e) {
+					recognition.stop();
+				}
+			}
+		}
+	</script>
+	<script>
+		function storeText() {
+			var text = document.getElementById('output').innerHTML;
+			console.log(text);
+		}
+	</script>
+	<button onclick="storeText()">Store Text</button>
+</body>
+</html>
